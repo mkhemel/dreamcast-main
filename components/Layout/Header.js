@@ -9,15 +9,38 @@ import Link from "next/link";
 
 export default function Header(props) {
   const router = useRouter();
-  const [activeRoute, setActiveRoute] = useState('');
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    setActiveRoute(router.pathname);
-  }, [router.pathname]);
+    const sections = document.querySelectorAll('section');
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach(section => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
 
   return (
     <header>
-      <Navbar collapseOnSelect expand="lg" className={`navbar-custom ${Styles.navbarWrapper}`}>
+      <Navbar collapseOnSelect fixed={"top"} expand="lg" className={`navbar-custom ${Styles.navbarWrapper}`}>
         <Container className={Styles.navInner}>
           <Link className={"navbar-brand"} href="/">
             <img className={Styles.logo} src={`${props.path}images/logo.png`} alt="Chayya" />
@@ -25,19 +48,15 @@ export default function Header(props) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Link className={activeRoute === '/' ? 'active nav-link' : 'nav-link'} href="/">Home</Link>
-              <Link className={activeRoute === '/about' ? 'active nav-link' : 'nav-link'} href="/about">About</Link>
-              <NavDropdown className={activeRoute === '/packages' ? 'active' : ''} title="Packages" id="collapsible-nav-dropdown">
-                {props.packages ? (
-                  props.packages.map((item, index) => (
-                    <NavDropdown.Item key={index} href={`/packages/${item.slug}`}>{item.title}</NavDropdown.Item>
-                  ))
-                ) : (
-                  <NavDropdown.Item disabled>Loading...</NavDropdown.Item>
-                )}
+              <Link className={activeSection === 'home' ? 'active nav-link' : 'nav-link'} href="#home">Home</Link>
+              <Link className={activeSection === 'clients' ? 'active nav-link' : 'nav-link'}  href="#clients">Clients</Link>
+              <Link className={activeSection === 'teams' ? 'active nav-link' : 'nav-link'}  href="#teams">Team</Link>
+              <NavDropdown  title="Work" id="collapsible-nav-dropdown"  className={activeSection === 'workEvent' ? 'active work-dropdown' : 'work-dropdown'} >
+
+                  <NavDropdown.Item className={activeSection === 'workEvent' ? 'active' : ''} href={'#workEvent'}>Event</NavDropdown.Item>
+
               </NavDropdown>
-              <Link className={'nav-link'} href="#">Solution</Link>
-              <Link className={'nav-link'} href="#">Policy</Link>
+              <Link  className={activeSection === 'contact' ? 'active nav-link' : 'nav-link'} href="#contact">Contact</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

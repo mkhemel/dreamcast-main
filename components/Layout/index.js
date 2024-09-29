@@ -7,7 +7,6 @@ function Index({children, path="./", packages= [] }) {
     <>
       <Header path={path} packages={packages} />
       {children}
-      <Footer path={path}/>
     </>
   );
 }

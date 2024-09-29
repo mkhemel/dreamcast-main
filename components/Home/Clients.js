@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 
 function Clients(props) {
     return (
-        <section className={"section"}>
+        <section className={"section"} id={'clients'}>
             <Container><h1 className="section-title mb-4 text--primary">Clients</h1></Container>
             <div className="py-4 client-bg">
                 <Container>
