@@ -64,17 +64,17 @@ export default function Home() {
                             </SwiperSlide>
                         </Swiper>
                         <div className="row justify-content-center align-items-center g-4 mt-2">
-                            <div className="col-8 col-sm-6 col-md-4 col-xl-3">
+                            <div className="col-7 col-sm-6 col-md-4 col-xl-3">
                                 <img className="w-100" src="./images/since.png" alt="Since"/>
                             </div>
-                            <div className="col-8 col-sm-6 col-md-3">
+                            <div className="col-7 col-sm-6 col-md-3">
                                 <div className="position-relative md-image-wrap">
                                     <img className="w-100" src="./images/ceo.png" alt="CEO"/>
                                 </div>
                             </div>
                             <div className="col-12 col-md-5 col-xl-4">
                                 <img className="quote-icon" src="./images/quote.png" alt="Quote"/>
-                                <h1 className="md-speach"><span>The Success</span> of Your Brand
+                                <h1 className="md-speach "><span>The Success</span> of Your Brand
                                     Depends on Its Consistency
                                     & Continuity.</h1>
                                 <div className="d-flex">

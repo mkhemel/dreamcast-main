@@ -11,7 +11,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 50%;
+    width: 25%;
     height: 100%;
     z-index: -1;
     background-color: $primary-color;
@@ -60,5 +60,16 @@
 
 @media only screen and (max-width: 576px) {
 
+  .logo{
+    height: 40px;
+  }
+
+  .navbarWrapper{
+    height: 70px;
+
+    &::after{
+      display: none;
+    }
+  }
 }
 

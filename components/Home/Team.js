@@ -12,8 +12,9 @@ import Container from "react-bootstrap/Container";
 
 function Team(props) {
     return (
-        <section className="gray-bg" id={'teams'}>
+        <section className="gray-bg section" id={'teams'}>
             <Container>
+                <h1 className="section-title mb-4 text--primary">Team</h1>
                 <div className={'row justify-content-center'}>
                     <div className="col-lg-11">
                         <Swiper

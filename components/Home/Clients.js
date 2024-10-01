@@ -36,10 +36,11 @@ function Clients(props) {
                         modules={[FreeMode,Autoplay]}
                         centeredSlides={false}
                         autoplay={{
-                            delay: 2500,
+                            delay: 1500,
                             disableOnInteraction: false,
                         }}
                         navigation={false}
+                        loop={true}
                         className="mySwiper header-swiper mt-2"
                     >
                         <SwiperSlide>

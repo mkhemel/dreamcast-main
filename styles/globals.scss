@@ -358,7 +358,6 @@ button{
 .swiper.team-swiper {
   width: 100%;
   padding-top: 50px;
-  padding-bottom: 50px;
 }
 
 .team-swiper .swiper-slide {
@@ -387,14 +386,27 @@ button{
 }
 
 .team-swiper .swiper-slide-fully-visible.swiper-slide-active .team-info{
-    display: block;
+  opacity: 1;
+  //height: fit-content;
+  transition: all 0.3s ease;
+}
+
+.team-swiper.swiper-3d .swiper-slide-shadow-right,
+.team-swiper.swiper-3d .swiper-slide-shadow-left{
+  background-image: none;
+}
+
+.team-swiper .swiper-slide.swiper-slide-visible.swiper-slide-prev,
+.team-swiper .swiper-slide.swiper-slide-visible.swiper-slide-next{
+  filter: brightness(50%);
 }
 
 .team-info{
   color: $primary-color;
   font-style: italic;
   font-family: "Poppins", sans-serif;
-  display: none;
+  opacity: 0;
+  //height: 0;
 }
 
 .team-info .team-name{
@@ -416,7 +428,8 @@ button{
   margin-bottom: 0;
 }
 
-#home{
+#home,
+.work-page{
   padding-top: 90px;
 }
 
@@ -443,10 +456,20 @@ button{
   top: 5px;
 }
 
+.event-card-wrap{
+  overflow: hidden;
+}
+
 .event-card{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: scale(1.01);
 }
 
 .event-card-content{
@@ -481,7 +504,7 @@ button{
 }
 
 section#contact{
-  padding-top: 50px;
+  //padding-top: 50px;
 }
 
 .contact-title{
@@ -576,6 +599,58 @@ section#contact{
   border: 2px solid $primary-color;
 }
 
+.gallery {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 260px;
+  grid-auto-flow: dense;
+  margin: 10px auto;
+  padding: 0 10px;
+}
+
+.gallery__item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery__item > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery__item--hor {
+  grid-column: span 2;
+}
+
+.gallery__item--hor-3 {
+  grid-column: span 3;
+}
+
+.gallery__item--vert {
+  grid-row: span 2;
+}
+
+.gallery__item--lg {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.work-page{
+  min-height: 100vh;
+}
+
+.attach-btn-wrap{
+  width: 22px;
+  flex-grow: 0;
+}
+
+#file-name{
+  flex-grow: 1;
+}
+
 
 @media only screen and (max-width: 2400px) {
   .client-bg{
@@ -633,6 +708,82 @@ section#contact{
   .client-bg{
     background-size: 580%;
   }
+
+  .md-speach{
+    text-align: center !important;
+  }
+
+  .quote-icon{
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .md-speach{
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .team-swiper .swiper-slide{
+    width: 70% !important;
+  }
+
+  .team-info .team-name{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    margin-top: 7px;
+  }
+
+  .team-info .team-position{
+    font-size: 14px;
+  }
+
+  .team-info .team-description{
+    font-size: 12px;
+  }
+
+  .event-card-content{
+   height: 180px;
+  }
+
+  .section-title{
+    font-size: 25px;
+  }
+
+  .event-card-content .event-title{
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .contact-title{
+   font-size: 20px;
+    padding: 10px 30px;
+  }
+  .contact-thumb {
+    height: 50px;
+  }
+
+  .contact-info-card{
+    margin-bottom: 100px;
+  }
+
+  .location-wrap{
+    height: 100px;
+  }
+
+  .location-wrap iframe{
+    height: 180px;
+  }
+
+  .contact-form-title {
+    font-size: 22px;
+  }
+
+  #home,
+  .work-page{
+    padding-top: 65px !important;
+  }
+
 }
 
 

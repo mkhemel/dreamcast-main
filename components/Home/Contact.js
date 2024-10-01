@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Container from "react-bootstrap/Container";
 
-function Team(props) {
+function contact(props) {
     const [fileName, setFileName] = useState('');
 
     const handleFileSelect = (event) => {
@@ -18,11 +18,11 @@ function Team(props) {
     return (
         <section className="gray-bg" id={'contact'}>
             <Container>
-                <div className={'d-flex justify-content-center align-items-center mb-5'}>
+                <div className={'d-flex justify-content-center align-items-center mb-2 mb-lg-5'}>
                     <img className="contact-thumb" src="./images/thumb.png" alt="Thumb"/>
                     <h1 className={"contact-title"}>GET IN TOUCH</h1>
                 </div>
-                <div className="row gx-5 align-items-center">
+                <div className="row gx-lg-5 align-items-center">
                     <div className="col-lg-6">
                         <div className="contact-info-card">
                             <h3 className="contact-info-title">Contact Info</h3>
@@ -43,7 +43,7 @@ function Team(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 mb-5">
                         <div className="card contact-form-card">
                             <div className="card-body">
                                 <h1 className="contact-form-title">Drop Your Message</h1>
@@ -68,13 +68,14 @@ function Team(props) {
                                                     className="file"
                                                     onChange={handleFileSelect}
                                                 />
-                                                <div className="d-flex align-items-center">
-                                                    <div className="">
+                                                <div className="d-flex align-items-center w-100">
+                                                    <div className="attach-btn-wrap">
                                                         <img className="attach-btn me-2" src="./images/attach.png" alt="Attach" onClick={triggerFileInput}/>
                                                     </div>
                                                     <input
                                                         type="text"
                                                         id="file-name"
+                                                        onClick={triggerFileInput}
                                                         className="form-control"
                                                         value={fileName}
                                                         placeholder="Attach your CV"
@@ -101,4 +102,4 @@ function Team(props) {
         </section>);
 }
 
-export default Team;
+export default contact;
