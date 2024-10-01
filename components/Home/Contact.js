@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Container from "react-bootstrap/Container";
 
-function contact(props) {
+function Contact(props) {
     const [fileName, setFileName] = useState('');
 
     const handleFileSelect = (event) => {
@@ -102,4 +102,4 @@ function contact(props) {
         </section>);
 }
 
-export default contact;
+export default Contact;

@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from "./Header";
-import Footer from "@/components/Layout/footer";
 
 function Index({children, path="./", packages= [] }) {
   return (
