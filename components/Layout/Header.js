@@ -43,7 +43,7 @@ export default function Header(props) {
       <Navbar collapseOnSelect fixed={"top"} expand="lg" className={`navbar-custom ${Styles.navbarWrapper}`}>
         <Container className={Styles.navInner}>
           <Link className={"navbar-brand"} href="/">
-            <img className={Styles.logo} src={`${props.path}images/logo.png`} alt="Chayya" />
+            <img className={Styles.logo} src={`${props.path}images/logo.png`} alt="Dreamcast" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
