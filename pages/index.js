@@ -62,6 +62,9 @@ export default function Home() {
                             <SwiperSlide>
                                 <img src="./images/home-banner.png" alt="Banner"/>
                             </SwiperSlide>
+                            <SwiperSlide>
+                                <img src="./images/home-banner-3.png" alt="Banner"/>
+                            </SwiperSlide>
                         </Swiper>
                         <div className="row justify-content-center align-items-center g-4 mt-2">
                             <div className="col-7 col-sm-6 col-md-4 col-xl-3">

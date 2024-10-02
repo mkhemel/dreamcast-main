@@ -781,7 +781,28 @@ section#contact{
 
   #home,
   .work-page{
-    padding-top: 65px !important;
+    padding-top: 75px !important;
+  }
+
+  .gallery__item--hor-3 {
+    grid-column: span 2  !important;
+  }
+  .gallery__item--hor-1 {
+    grid-column: span 2 !important;
+  }
+
+  .gallery__item--hor{
+    grid-column: span 2 !important;
+  }
+
+  .gallery__item:not(.gallery__item--hor),
+  .gallery__item:not(.gallery__item--hor-1),
+  .gallery__item:not(.gallery__item--hor-3){
+    grid-column: span 2 !important;
+  }
+
+  .gallery{
+    padding: 0;
   }
 
 }

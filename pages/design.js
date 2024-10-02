@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Head from "next/head";
 import Layout from "@/components/Layout";
 
-function Design(props) {
+function Design() {
     return (<>
         <Head>
             <title>Dreamcast - Activation</title>
